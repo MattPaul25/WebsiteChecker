@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Net;
 
 namespace WebsiteChecker
 {
     class CheckData
     {
-        private string[] columns = { "Source Code", "Source Type", "Source Name", "Web Address", "Directory Name", "Status" };
+        private string[] columns = { "Source Code", "Source Type", "Source Name", "Web Address", "Directory Name", "Found URL", "Notes"};
         private DataTable InDt;
         public DataTable OutDt { get; set; }
 
@@ -36,19 +37,54 @@ namespace WebsiteChecker
                 returnTable.Rows[i][columns[2]] = nRow[2];
                 returnTable.Rows[i][columns[3]] = nRow[3];
                 returnTable.Rows[i][columns[4]] = nRow[4];
-                returnTable.Rows[i][columns[5]] = GetStatus(returnTable.Rows[i][columns[3]].ToString());
+                string[] urlStatus = getUrl(returnTable.Rows[i][columns[3]].ToString());
+                returnTable.Rows[i][columns[5]] = urlStatus[0];
+                returnTable.Rows[i][columns[6]] = urlStatus[1];
             }
-
             return returnTable;
         }
-
-        private object GetStatus(string website)
+        private string[] getUrl(string website)
         {
-            string ReturnStatus = "";
-            //
-            return ReturnStatus;
-        }
+            Console.WriteLine("trying " + website);
+            string[] returnUrl = new string[2];
+            WebResponse response;
+            WebRequest request;
+            try
+            {
+                
+                var uri = new Uri(website);
+                request = WebRequest.Create(uri);
+                request.Timeout = 10000;
+                using (response = request.GetResponse())
+                {
+                    returnUrl[0] = response.ResponseUri.ToString();
 
+                    if (response.ResponseUri.ToString() == website)
+                    {
+                        returnUrl[1] = "success";
+                    }
+                    else
+                    {
+                        returnUrl[1] = "Website Change";
+                    }
+                   
+                }
+                Console.WriteLine("Success");
+            }
+            catch (WebException wex)
+            {
+                Console.WriteLine("site was not found :" + wex.Message);
+                returnUrl[0] = "Not Found URL";
+                returnUrl[1] = wex.Message;
+            }
+            catch (Exception x)
+            {
+                Console.WriteLine("Unexpected exception " + x.Message);
+                returnUrl[0] = "unknown error";
+                returnUrl[1] = x.Message;
+            }      
+            return returnUrl;
+        }
         
     }
 }
