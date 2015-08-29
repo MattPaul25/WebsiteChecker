@@ -30,6 +30,7 @@ namespace WebsiteChecker
             }
             for (int i = 0; i < InDt.Rows.Count; i++)
             {
+                Console.WriteLine(i);
                 var nRow = InDt.Rows[i].ItemArray;
                 returnTable.Rows.Add();
                 returnTable.Rows[i][columns[0]] = nRow[0];
@@ -54,7 +55,7 @@ namespace WebsiteChecker
                 
                 var uri = new Uri(website);
                 request = WebRequest.Create(uri);
-                request.Timeout = 10000;
+                request.Timeout = 30000; //will timeout after 30 seconds and throw a webexception
                 using (response = request.GetResponse())
                 {
                     returnUrl[0] = response.ResponseUri.ToString();
