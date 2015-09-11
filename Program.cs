@@ -13,9 +13,9 @@ namespace WebsiteChecker
         static void Main(string[] args)
         {
             Console.WriteLine("Starting");
-            DataTable dt = new ImportData("C:\\Users\\fargusonm\\Documents\\Visual Studio 2013\\Projects\\WebsiteChecker\\sources.csv").dt;
+            DataTable dt = new ImportData("C:\\Users\\Matt\\Desktop\\sources.csv").dt;
             var check = new CheckData(dt).OutDt;
-            var exp = new ExportData(check, "C:\\Users\\fargusonm\\Documents\\Visual Studio 2013\\Projects\\WebsiteChecker\\results.xlsx");
+            var exp = new ExportData(check, "C:\\Users\\Matt\\Desktop\\sources.csv\\results.xlsx");
         }
         private static object GetStatus(string website)
         {

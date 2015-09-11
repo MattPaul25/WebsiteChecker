@@ -46,7 +46,6 @@ namespace WebsiteChecker
         }
         private string[] getUrl(string website)
         {
-           
             string[] returnUrl = new string[2];
             WebResponse response;
             WebRequest request;

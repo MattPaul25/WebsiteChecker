@@ -11,3 +11,8 @@ C:\Users\fargusonm\Documents\Visual Studio 2013\Projects\WebsiteChecker\bin\Debu
 C:\Users\fargusonm\Documents\Visual Studio 2013\Projects\WebsiteChecker\bin\Debug\WebsiteChecker.pdb
 C:\Users\fargusonm\Documents\Visual Studio 2013\Projects\WebsiteChecker\obj\Debug\WebsiteChecker.csprojResolveAssemblyReference.cache
 C:\Users\fargusonm\Documents\Visual Studio 2013\Projects\WebsiteChecker\obj\Debug\WebsiteChecker.csproj.ResolveComReference.cache
+C:\Users\Matt\Documents\visual studio 2013\Projects\WebsiteChecker\obj\Debug\WebsiteChecker.csproj.ResolveComReference.cache
+C:\Users\Matt\Documents\visual studio 2013\Projects\WebsiteChecker\bin\Debug\WebsiteChecker.exe.manifest
+C:\Users\Matt\Documents\visual studio 2013\Projects\WebsiteChecker\bin\Debug\WebsiteChecker.application
+C:\Users\Matt\Documents\visual studio 2013\Projects\WebsiteChecker\obj\Debug\WebsiteChecker.exe.manifest
+C:\Users\Matt\Documents\visual studio 2013\Projects\WebsiteChecker\obj\Debug\WebsiteChecker.application
