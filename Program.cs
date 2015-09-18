@@ -15,7 +15,7 @@ namespace WebsiteChecker
             Console.WriteLine("Starting");
             DataTable dt = new ImportData("C:\\Users\\Matt\\Desktop\\sources.csv").dt;
             var check = new CheckData(dt).OutDt;
-            var exp = new ExportData(check, "C:\\Users\\Matt\\Desktop\\sources.csv\\results.xlsx");
+            var exp = new ExportData(check, "C:\\Users\\Matt\\Desktop\\results.xlsx");
         }
         private static object GetStatus(string website)
         {

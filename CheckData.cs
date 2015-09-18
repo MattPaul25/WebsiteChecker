@@ -85,7 +85,7 @@ namespace WebsiteChecker
                 else
                 {
                     tried = true;
-                    getUrl(website);                   
+                    returnUrl = getUrl(website);                   
                 }
             }
             catch (Exception x)
@@ -99,7 +99,7 @@ namespace WebsiteChecker
                 else
                 {
                     tried = true;
-                    getUrl(website);                   
+                    returnUrl = getUrl(website);                   
                 }
                 
             }      
